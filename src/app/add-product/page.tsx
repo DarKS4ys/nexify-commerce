@@ -1,6 +1,8 @@
 import { prisma } from '@/lib/db/prisma';
 import { redirect } from 'next/navigation';
 import FormSubmitButton from '../components/FormSubmitButton';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth';
 
 export const metadata = {
   title: 'Nexify - Add Product',
@@ -8,6 +10,12 @@ export const metadata = {
 
 async function addProduct(formData: FormData) {
   'use server';
+
+  const session = await getServerSession(authOptions)
+
+  if (!session) {
+    redirect('/api/auth/sign-in?callbackUrl=/add-product')
+  }
 
   const name = formData.get('name')?.toString();
   const description = formData.get('description')?.toString();
@@ -25,7 +33,13 @@ async function addProduct(formData: FormData) {
   redirect('/');
 }
 
-export default function page() {
+export default async function page() {
+  const session = await getServerSession(authOptions)
+
+  if(!session) {
+    redirect("/api/auth/sign-in?callbackUrl=/add-product")
+  }
+
   return (
     <div className="flex flex-col items-center justify-center h-screen gap-4">
       <h1 className="md:text-4xl text-2xl font-bold">Add Product</h1>
