@@ -17,7 +17,7 @@ export default function AddToCardButton({ productId, incrementProductQuantity }:
     <div className="flex items-center gap-2">
       <Toaster theme="light" richColors closeButton />
       <button
-        className="btn btn-primary uppercase"
+        className="btn btn-primary uppercase group overflow-hidden"
         disabled={isPending}
         onClick={() => {
           setSuccess(false);
@@ -32,8 +32,8 @@ export default function AddToCardButton({ productId, incrementProductQuantity }:
           });
         }}
       >
-        <h1>Add to Cart</h1>
-        <HiOutlineShoppingCart size={18} />
+        <h1 className='group-hover:translate-x-4 transition'>Add to Cart</h1>
+        <HiOutlineShoppingCart size={18} className="group-hover:translate-x-10 transition" />
       </button>
       {isPending && <span className="loading loading-spinner loading-md" />}
       {!isPending && success && (

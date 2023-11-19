@@ -1,6 +1,5 @@
-import type { Config } from 'tailwindcss'
-
-const config: Config = {
+const config = {
+  darkMode: ["class"],
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,8 +12,8 @@ const config: Config = {
         light: {
           primary: "#f4aa3a",
           secondary: "#f4f4a1",
-          accent: "#1be885",
-          neutral: "#272136",
+          accent: "#cfcaca",
+          neutral: "#ffffff",
           "base-100": "#ffffff",
           info: "#778ad4",
           success: "#23b893",
@@ -28,8 +27,8 @@ const config: Config = {
         dark: {
           primary: "#f4aa3a",
           secondary: "#f4f4a1",
-          accent: "#1be885",
-          neutral: "#272136",
+          accent: "#424242",
+          neutral: "#212225",
           "base-100": "#212225", // Set your dark background color here
           info: "#778ad4",
           success: "#23b893",

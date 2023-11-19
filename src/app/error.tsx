@@ -3,7 +3,7 @@
 export default function ErrorPage() {
     return (
     <div className="w-full h-screen flex items-center justify-center">
-        <div className="bg-primary rounded-xl px-8 py-4">
+        <div className="bg-primary rounded-xl px-8 py-4 text-black">
             <h1>Something went wrong. Please refresh the page</h1>
         </div>
     </div>)

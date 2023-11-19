@@ -3,7 +3,7 @@ import { prisma } from '@/lib/db/prisma';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { cache } from 'react';
+import { cache, useEffect } from 'react';
 import AddToCardButton from './AddToCardButton';
 import { incrementProductQuantity } from '../actions';
 
