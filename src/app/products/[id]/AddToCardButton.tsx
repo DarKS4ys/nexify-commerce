@@ -32,8 +32,8 @@ export default function AddToCardButton({ productId, incrementProductQuantity }:
           });
         }}
       >
-        <h1 className='group-hover:translate-x-4 transition'>Add to Cart</h1>
-        <HiOutlineShoppingCart size={18} className="group-hover:translate-x-10 transition" />
+        <h1 className='group-hover:translate-x-3 transition duration-200'>Add to Cart</h1>
+        <HiOutlineShoppingCart size={18} className="group-hover:translate-x-9 transition duration-200" />
       </button>
       {isPending && <span className="loading loading-spinner loading-md" />}
       {!isPending && success && (
